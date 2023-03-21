@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://darko96.github.io/faq-accordion-card/]
-- Live Site URL: [https://github.com/Darko96/faq-accordion-card]
+- Solution URL: [https://github.com/Darko96/faq-accordion-card]
+- Live Site URL: [https://darko96.github.io/faq-accordion-card/]
 
 ## My process
 
