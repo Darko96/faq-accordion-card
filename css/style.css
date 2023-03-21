@@ -43,6 +43,10 @@ main {
   justify-content: center;
 }
 
+.faq-accortion-section {
+  position: relative;
+}
+
 .flex {
   display: flex;
   align-items: flex-start;
@@ -62,17 +66,14 @@ main {
   overflow: hidden;
 }
 
-.faq-accortion-section {
-  position: relative;
-}
-
-.faq-accortion-img-desktop {
+/* start styling images */
+.faq-img-desktop {
   position: relative;
   top: 0;
   left: -8rem;
 }
 
-.faq-accortion-img-shadow {
+.faq-img-shadow {
   position: absolute;
   left: -57rem;
   top: -30rem;
@@ -86,19 +87,32 @@ main {
   left: -9.2rem;
   top: 20rem;
   z-index: 2;
+
+  animation-name: go-up-down;
+  animation-duration: 3s;
+  animation-delay: 0.1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  transition: transform 0.5s ease-in-out;
 }
 
-.faq-accortion-img-box-mobile {
+@keyframes go-up-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(1rem);
+  }
+}
+
+.faq-images-mobile {
   display: none;
 }
+/* end styling images */
 
 .questions-box {
   width: 35rem;
   max-width: 35rem;
-}
-
-.question-title:checked {
-  font-weight: 700;
 }
 
 .questions-heading {
@@ -140,6 +154,10 @@ main {
   border: none;
 }
 
+.question-title:checked {
+  font-weight: 700;
+}
+
 .question-btn:hover {
   color: #f47b56;
 }
@@ -160,29 +178,20 @@ main {
   display: block;
 }
 
+/* For smaller devices  */
 @media (max-width: 920px) {
-  .faq-accortion-img-box-mobile {
-    display: block;
-  }
-
-  .flex {
-    display: flex;
-  }
-
   .container {
-    position: relative;
     height: 53.5rem;
     max-height: 53.5rem;
     max-width: 32rem;
 
     padding: 13.2rem 2.4rem 0 2.4rem;
-    background-color: #fff;
-    border-radius: 2.3rem;
     box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
     overflow: visible;
   }
 
-  .faq-accortion-img-box-desktop {
+  /* start styling images */
+  .faq-images-desktop {
     display: none;
   }
 
@@ -190,11 +199,11 @@ main {
     display: none;
   }
 
-  .faq-accortion-img-box-mobile {
+  .faq-images-mobile {
     display: block;
   }
 
-  .faq-accortion-img-mobile {
+  .faq-img-mobile {
     position: absolute;
     left: 14%;
     top: -20%;
@@ -218,13 +227,14 @@ main {
     }
   }
 
-  .faq-accortion-shadow-mobile {
+  .faq-shadow-mobile {
     position: absolute;
     left: 14%;
     top: 0;
     height: auto;
     width: 24rem;
   }
+  /* end styling images */
 
   .questions-box {
     width: 27.9rem;
@@ -238,12 +248,6 @@ main {
 
   .question {
     margin-bottom: 1.7rem;
-  }
-
-  .question-answer-text {
-    font-size: 1.2rem;
-    line-height: 1.8rem;
-    padding-right: 1rem;
   }
 
   .question-btn {
